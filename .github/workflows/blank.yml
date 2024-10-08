@@ -1,0 +1,16 @@
+name: Keep AlejandroGPT App Alive with GitHub Actions
+
+on:
+  schedule:
+    # Programa el flujo de trabajo para que se ejecute cada 25 minutos
+    - cron: '*/25 * * * *'
+
+jobs:
+  keep_alive:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Send request to keep app alive
+      run: |
+        # URL de la aplicación que deseas mantener activa
+        curl -X GET "https://tu-app-en-el-servidor.com/keep-alive"
